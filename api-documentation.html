@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!--favicon icon-->
+    <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="16x16" />
+
+    <!--title-->
+    
+    <title>SMS Gateway Addons & Integrations | CRM, CMS & eCommerce SMS</title>
+    <meta name="description" content="Connect your SMS Gateway with CRM, CMS, ERP, eCommerce, and business applications using powerful SMS Addons. Automate OTPs, notifications, alerts, and customer communication with seamless integrations.">
+    <meta name="keywords" content="SMS Addons, SMS Integrations, CRM SMS Integration, WordPress SMS Plugin, WooCommerce SMS, OpenCart SMS, WHMCS SMS, Zapier SMS Integration, MoEngage SMS, CleverTap SMS, Bulk SMS API, Business SMS Automation, SMS Gateway Integrations">
+
+    <!--build:css-->
+    <link id="theme-style" href="assets/css/main.css" as="style" rel="stylesheet" />
+    <link id="theme-dynamic" href="" as="style" rel="stylesheet" />
+    <!-- endbuild -->
+
+
+
+    <style>
+        .info-card {
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .info-card.blue  { background: var(--primary-light); border: 1px solid #bfdbfe; }
+  .info-card.green { background: var(--success-bg); border: 1px solid #bbf7d0; }
+  .info-card.yellow{ background: var(--warning-bg); border: 1px solid #fde68a; }
+  .info-card.red   { background: var(--error-bg); border: 1px solid #fecaca; }
+  .info-card-icon  { font-size: 18px; margin-top: -5px; flex-shrink: 0; }
+  .info-card-body  { font-size: 14px; color: var(--gray-700); line-height: 1.6; }
+  .info-card-body strong { color: #000; }
+
+  /* ── Endpoint Box ── */
+  .endpoint-box {
+    border: 2px solid #e2e8f0;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 0;
+  }
+  .endpoint-header {
+    background: #f9fafb;
+    padding: 14px 20px;
+    display: flex; align-items: center; gap: 12px;
+  border: 2px solid #e2e8f0;
+  }
+  .method-badge {
+    font-family: var(--font-mono);
+    font-size: 12px; font-weight: 700;
+    padding: 3px 10px; border-radius: 5px;
+    text-transform: uppercase;
+  }
+  .method-get  { background: #dbeafe; color: #1d4ed8; }
+  .method-post { background: #dcfce7; color: #15803d; }
+  .endpoint-url {
+    font-family: var(--font-mono); font-size: 14px; color: var(--gray-800);
+    word-break: break-all;
+  }
+  .endpoint-desc { padding: 16px 20px; font-size: 14px; color: var(--gray-600); }
+
+  /* ── Tables ── */
+  .table-wrap { overflow-x: auto; border-radius: 1rem; border: 2px solid #e2e8f0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  thead th {
+    background: #f9fafb; padding: 11px 16px;
+    text-align: left; font-weight: 600; color: var(--gray-700);
+    border-bottom: 1px solid #f9fafb;
+    font-size: 13px;
+  }
+  tbody td { padding: 11px 16px; border-bottom: 1px solid #f9fafb; color: var(--gray-700); vertical-align: top; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: #fdfdfd; }
+  .req-badge {
+    font-size: 10px; font-weight: 700; padding: 2px 7px;
+    border-radius: 4px; text-transform: uppercase; letter-spacing: .4px;
+  }
+  .req-yes { background: #fef9c3; color: #854d0e; }
+  .req-no  { background: var(--gray-100); color: var(--gray-500); }
+
+  code {
+    background: #f3f4f6; color: #0946ae;
+    padding: 2px 6px; border-radius: 4px;
+  }
+
+  /* ── Code Blocks ── */
+  .code-block {
+    background: #0d1117;
+    border: 2px solid #e2e8f0;
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  .code-block-header {
+    background: #161b22;
+    padding: 10px 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 1px solid #30363d;
+  }
+  .code-lang {
+    font-size: 12px; font-weight: 600; color: #8b949e;
+    text-transform: uppercase; letter-spacing: .6px;
+  }
+  .copy-btn {
+    background: none; border: 1px solid #30363d; color: #8b949e;
+    font-size: 12px; padding: 3px 10px; border-radius: 5px; cursor: pointer;
+    transition: all .2s;
+  }
+  .copy-btn:hover { background: #30363d; color: #e6edf3; }
+  pre {
+    overflow-x: auto; padding: 20px;
+    font-family: var(--font-mono); font-size: 13.5px; line-height: 1.65;
+    color: #e6edf3; tab-size: 2;
+    margin: 0;
+  }
+
+  /* ── Tabs ── */
+  .tabs { margin: 20px 0; }
+  .tab-buttons {
+    display: flex; gap: 2px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--gray-200); margin-bottom: 0;
+  }
+  .tab-btn {
+    padding: 6px 18px;
+    background: #f0fdf4; cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: all .15s;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: 1px solid #bbf7d0;
+    font-size: 14px;
+  }
+  .tab-btn:hover { color: var(--gray-800); }
+  .tab-btn.active { background: #fffbeb; border-color: #fde68a; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* ── Response block ── */
+  .response-block { margin-top: 16px; }
+  .response-label {
+    font-size: 12px; font-weight: 700; letter-spacing: .5px;
+    text-transform: uppercase; color: var(--gray-500);
+    margin-bottom: 8px;
+  }
+
+  /* ── Status Pill ── */
+  .status-pill {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 13px; font-weight: 600; padding: 4px 12px;
+    border-radius: 20px;
+  }
+  .status-200 { background: #dcfce7; color: #15803d; }
+  .status-400 { background: #fff7ed; color: #c2410c; }
+  .status-401 { background: #fef2f2; color: #dc2626; }
+  .status-402 { background: #faf5ff; color: #7c3aed; }
+  .status-429 { background: #fff7ed; color: #c2410c; }
+  .status-500 { background: #fef2f2; color: #dc2626; }
+
+  /* ── Error Code Table ── */
+  .error-code { font-family: var(--font-mono); font-weight: 600; color: var(--error); }
+
+  /* ── Steps ── */
+  .steps { margin: 20px 0; }
+  .step {
+    display: flex; gap: 16px; margin-bottom: 28px;
+  }
+  .step-num {
+    width: 32px; height: 32px; min-width: 32px;
+    background: var(--primary); color: #fff;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; margin-top: 2px;
+  }
+  .step-body { flex: 1; }
+  .step-body h4 { margin-top: 0; }
+
+  /* ── Use case card ── */
+  .usecase-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .usecase-card {
+    border: 1px solid var(--gray-200); border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .usecase-card h4 { margin-top: 0; color: var(--primary); }
+  .usecase-card ul { padding-left: 18px; }
+  .usecase-card ul li { font-size: 13.5px; color: var(--gray-600); margin-bottom: 4px; }
+
+  /* ── Footer ── */
+  .footer {
+    margin-left: var(--sidebar-w);
+    padding: 24px 60px;
+    border-top: 1px solid var(--gray-200);
+    font-size: 13px; color: var(--gray-500);
+    display: flex; justify-content: space-between; align-items: center;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main { margin-left: 0; padding: 28px 20px 60px; }
+    .footer { margin-left: 0; padding: 20px; flex-direction: column; gap: 8px; }
+    .usecase-grid { grid-template-columns: 1fr; }
+  }
+
+  /* syntax colors */
+  .kw  { color: #ff7b72; }
+  .st  { color: #a5d6ff; }
+  .cm  { color: #8b949e; font-style: italic; }
+  .nu  { color: #79c0ff; }
+  .fn  { color: #d2a8ff; }
+  .va  { color: #ffa657; }
+  .op  { color: #ff7b72; }
+    </style>
+
+</head>
+
+<body>
+    <!--preloader start-->
+    <div id="preloader">
+        <div class="preloader-wrap">
+            <img src="assets/img/logo-color.png" alt="logo" class="img-fluid" />
+            <div class="preloader">
+                <i>.</i>
+                <i>.</i>
+                <i>.</i>
+            </div>
+        </div>
+    </div>
+    <!--preloader end-->
+    <!--header section start-->
+    <header id="header" class="header-main">
+            <!--main header menu start-->
+            <div id="logoAndNav" class="main-header-menu-wrap bg-transparent fixed-top">
+                <div class="container">
+                    <nav class="js-mega-menu navbar navbar-expand-md header-nav">
+                        <!--logo start-->
+                        <a class="navbar-brand pt-0" href="index.html">
+                            <img src="assets/img/logo-white.png" alt="logo" />
+                        </a>
+                        <!--logo end-->
+
+                        <!--responsive toggle button start-->
+                        <button type="button" class="navbar-toggler btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft">
+                            <span id="hamburgerTrigger">
+                                <span class="fas fa-bars"></span>
+                            </span>
+                        </button>
+                        <!--responsive toggle button end-->
+
+                        <!--main menu start-->
+                        <div id="navBar" class="collapse navbar-collapse">
+                            <ul class="navbar-nav ms-auto main-navbar-nav">
+                                <!--home start-->
+                                <li class="nav-item custom-nav-item">
+                                    <a class="nav-link custom-nav-link" href="index.html" >
+                                        Home
+                                    </a>
+                                    
+                                </li>
+                                <!--home end-->
+                                <li class="nav-item custom-nav-item">
+                                    <a class="nav-link custom-nav-link" href="about.html" >
+                                        About Us
+                                    </a>
+                                    
+                                </li>
+                                <!--pages start-->
+                                <li class="nav-item hs-has-sub-menu custom-nav-item">
+                                    <a id="pagesMegaMenu" class="nav-link custom-nav-link main-link-toggle" href="javascript:void(0);" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">
+                                        Services
+                                    </a>
+                                    <!-- Pages - Submenu -->
+                                    <ul id="pagesSubMenu" class="hs-sub-menu main-sub-menu" aria-labelledby="pagesMegaMenu" style="min-width: 230px;">
+                                        <li class="nav-item submenu-item">
+                                            <a class="nav-link sub-menu-nav-link" href="transactional-sms.html">
+                                                Transactional SMS
+                                            </a>
+                                        </li>
+                                        <li class="nav-item submenu-item">
+                                            <a class="nav-link sub-menu-nav-link" href="promotional-sms.html">
+                                                Promotional SMS
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- End Pages - Submenu -->
+                                </li>
+                                <!--pages start-->
+                                <li class="nav-item hs-has-sub-menu custom-nav-item">
+                                    <a id="pagesMegaMenu" class="nav-link custom-nav-link main-link-toggle" href="javascript:void(0);" aria-haspopup="true" aria-expanded="false" aria-labelledby="pagesSubMenu">
+                                        Pricing
+                                    </a>
+                                    <!-- Pages - Submenu -->
+                                    <ul id="pagesSubMenu" class="hs-sub-menu main-sub-menu" aria-labelledby="pagesMegaMenu" style="min-width: 230px;">
+                                        <li class="nav-item submenu-item">
+                                            <a class="nav-link sub-menu-nav-link" href="transactional-sms-pricing.html">
+                                                Transactional SMS Pricing
+                                            </a>
+                                        </li>
+                                        <li class="nav-item submenu-item">
+                                            <a class="nav-link sub-menu-nav-link" href="promotional-sms-pricing.html">
+                                                Promotional SMS Pricing
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- End Pages - Submenu -->
+                                </li>
+                                <li class="nav-item custom-nav-item">
+                                    <a class="nav-link custom-nav-link" target="_blank" href="api-documentation.html" >
+                                       Documentation
+                                    </a>
+                                    
+                                </li>
+                                <li class="nav-item custom-nav-item">
+                                    <a class="nav-link custom-nav-link" href="contact.html" >
+                                        Contact Us
+                                    </a>
+                                    
+                                </li>
+                                
+                                <!--button start-->
+                                <li class="nav-item header-nav-last-item d-flex align-items-center">
+                                    <li class="nav-item header-nav-last-item d-flex align-items-center">
+                                    <a class="btn btn-style1 animated-btn" href="https://sms.snwebtechsolution.com/login.php" target="_blank">
+                                        Login
+                                    </a>
+                                </li>
+                                </li>
+
+                                <li class="nav-item header-nav-last-item d-flex align-items-center">
+                                    <a class="btn btn-style2 animated-btn" href="https://sms.snwebtechsolution.com/register.php" target="_blank">
+                                        Get Started
+                                    </a>
+                                </li>
+                                <!--button end-->
+                            </ul>
+                        </div>
+                        <!--main menu end-->
+                    </nav>
+                </div>
+            </div>
+            <!--main header menu end-->
+
+            <!--offcanvas menu start-->
+            <div class="offcanvas offcanvas-start" id="offcanvasLeft" tabindex="-1">
+                <div class="offcanvas-header border-bottom">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/logo-color.png" alt="logo" class="img-fluid" />
+                    </a>
+                    <button class="btn-close" type="button" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body offcanvas-menu-wrap">
+                    <!--offcanvas menu list start-->
+                    <ul class="navbar-nav">
+                        <!--home item start-->
+                        <li class="nav-item ">
+                            <a class="nav-link " href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <!--home item end-->
+
+                        <!--page item start-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                                About Us
+                            </a>
+                            
+                        </li>
+                        <!--page item end-->
+
+                        <!--hosting item start-->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                                Services
+                            </a>
+                            <div class="dropdown-menu p-0">
+                                <div class="row g-0">
+                                    <div class="col-12">
+                                        <div class="menu-item-wrap py-0 p-md-3 p-lg-3">
+                                            <!--menu title with subtitle and icon item start-->
+                                            <div class="title-with-icon-item">
+                                                <a class="title-with-icon-link" href="transactional-sms.html">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="media-body">
+                                                            <span class="u-header__promo-title">Transational SMS</span>
+                                                            <small class="u-header__promo-text">
+                                                                Reliable OTP, alerts, and instant customer notification delivery service.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!--menu title with subtitle and icon item end-->
+                                            <!--menu title with subtitle and icon item start-->
+                                            <div class="title-with-icon-item">
+                                                <a class="title-with-icon-link" href="promotional-sms.html">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="media-body">
+                                                            <span class="u-header__promo-title">Promotional SMS</span>
+                                                            <small class="u-header__promo-text">
+                                                                Bulk SMS marketing solution for offers, campaigns, and customer engagement.
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!--menu title with subtitle and icon item end-->
+                                            
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </li>
+                        <!--hosting item end-->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                                Pricing
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" href="transactional-sms-pricing.html">Transactional SMS Pricing</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="promotional-sms-pricing.html">
+                                        Promotional SMS Pricing
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!--domain item start-->
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="api-documentation.html">
+                                Documentation
+                            </a>
+                            
+                        </li>
+                        <!--domain item end-->
+
+                        <!--affiliate item start-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">
+                                Contact Us
+                            </a>
+                        </li>
+                        <!--affiliate item end-->
+
+                       
+                        <!--company item end-->
+
+                        <!--button start-->
+                        <li class="nav-item header-nav-last-item d-flex align-items-center mt-3">
+                            <a class="btn blue-btn animated-btn" style="margin-right: 6px;" href="https://sms.snwebtechsolution.com/login.php" target="_blank">
+                                Login
+                            </a>
+
+                            <a class="btn orange-btn animated-btn" href="https://sms.snwebtechsolution.com/register.php" target="_blank">
+                                Get Started
+                            </a>
+                        </li>
+                        <!--button end-->
+                    </ul>
+                    <!--offcanvas menu list end-->
+                </div>
+            </div>
+            <!--offcanvas menu end-->
+        </header>
+    <!--header section end-->
+
+    <div class="main">
+
+        <!--page header section start-->
+        <section class="ptb-100 gradient-bg">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-8 col-lg-9">
+                        <div class="hero-content-wrap text-white text-center position-relative">
+                            <h1 class="text-white">SMS Gateway API Documentation</h1>
+                            <p class="lead">A complete guide to integrating our SMS Gateway API into any software, platform, or programming language. Send transactional OTPs, notifications, alerts, and bulk SMS with full DLT/TRAI compliance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--page header section end-->
+
+
+        <section class="feature-section pt-80 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mt-4">
+                        <div class="features-box p-4 ">
+                            <div class="features-box-content">
+                                <h5>Authentication & OTP</h5>
+                                <ul class="check-list-wrap">
+                                    <li style="font-size:14px">Login / Registration OTP</li>
+                                    <li style="font-size:14px">2-Factor Authentication</li>
+                                    <li style="font-size:14px">Password Reset</li>
+                                    <li style="font-size:14px">Transaction Confirmation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mt-4">
+                        <div class="features-box p-4 ">
+                            <div class="features-box-content">
+                                <h5>License Management</h5>
+                                <ul class="check-list-wrap">
+                                  <li style="font-size:14px">License Generated</li>
+                                  <li style="font-size:14px">License Expiry Alert</li>
+                                  <li style="font-size:14px">Renewal Reminder</li>
+                                  <li style="font-size:14px">New License Key Issued</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mt-4">
+                        <div class="features-box p-4 ">
+                            <div class="features-box-content">
+                                <h5>E-commerce & Billing</h5>
+                                <ul class="check-list-wrap">
+                                  <li style="font-size:14px">Order Confirmation</li>
+                                  <li style="font-size:14px">Payment Successful</li>
+                                  <li style="font-size:14px">Shipment Tracking</li>
+                                  <li style="font-size:14px">Invoice Generation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mt-4">
+                        <div class="features-box p-4 ">
+                            <div class="features-box-content">
+                                <h5>Alerts & Reminders</h5>
+                                <ul class="check-list-wrap">
+                                  <li style="font-size:14px">Appointment Reminders</li>
+                                  <li style="font-size:14px">Due Date Alerts</li>
+                                  <li style="font-size:14px">System Notifications</li>
+                                  <li style="font-size:14px">Marketing Campaigns</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Authentication</h4>
+                            <p>All API requests require an API Key for authentication. The <b>API Key</b> uniquely identifies your account and authorizes your requests. You can find your API Key in the SMS Gateway dashboard under your user profile. </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 mb-4" >
+                        <div class="features-box p-4 " style="background:#f0fdf4">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">🔑</span>
+                                <div class="info-card-body">
+                                    <strong>API Key Format:</strong> Your API key starts with <code>sk_</code> followed by a 48-character hex string.
+                                    Example: <code>sk_a1b2c3d4e5f6...</code>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 mb-4" >
+                        <h5>How to send your API Key</h5>
+                        <p>You can pass the API Key in any of these three ways:</p>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>How to Send</th>
+                                        <th>Example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Query Parameter</strong></td>
+                                        <td>Append <code>?api_key=YOUR_KEY</code> to the URL</td>
+                                        <td><code>/api/send.php?api_key=sk_xxx</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>POST Body</strong></td>
+                                        <td>Include <code>api_key</code> as a form field</td>
+                                        <td><code>api_key=sk_xxx</code></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>HTTP Header</strong></td>
+                                        <td>Send as <code>X-Api-Key</code> header</td>
+                                        <td><code>X-Api-Key: sk_xxx</code></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="col-md-12 " >
+                        <div class="features-box p-4 " style="background:#fffbeb; border-color: #fde68a;">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">⚠️</span>
+                                <div class="info-card-body">
+                                    <strong>Security Warning:</strong> Never expose your API Key in client-side code (browser JavaScript). Always make API calls from your backend server.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Base URL</h4>
+                            <p>All API endpoints are relative to your gateway's base URL:</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="code-block mb-4">
+                          <div class="code-block-header">
+                            <span class="code-lang">Base URL</span>
+                          </div>
+                          <pre>https://yourdomain.com/sms-gateway</pre>
+                        </div>
+
+                        <p>Replace <code>yourdomain.com/sms-gateway</code> with the actual domain where your SMS Gateway is hosted.
+                        All API calls shown in this document use <code>{BASE_URL}</code> as a placeholder for this.</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="feature-section pt-20 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Quick Start</h4>
+                            <p>Send your first SMS in under 5 minutes:</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" >
+                        <ul class="check-list-wrap">
+                            <li style="font-size:14px">
+                                
+                                <b style="font-size:15px">Get your API Key</b><br>Log in to the SMS Gateway dashboard → go to your Profile → copy your API Key.
+                            </li>
+                            <li style="font-size:14px">
+                                <b style="font-size:15px">Note your DLT details</b><br>Keep your <strong>Sender ID</strong>, <strong>Entity ID</strong>, and <strong>DLT Template ID</strong> ready. These are mandatory for TRAI compliance.
+                            </li>
+                            <li style="font-size:14px">
+                                <b style="font-size:15px">Make your first API call</b>
+                                <div class="code-block mb-2 mt-2">
+                                    <div class="code-block-header">
+                                        <span class="code-lang">cURL</span>
+                                    </div>
+                                    <pre><span class="kw">curl</span> -X POST <span class="st">"{BASE_URL}/api/send.php"</span> \
+  -d <span class="st">"api_key=sk_your_api_key"</span> \
+  -d <span class="st">"mobile=9876543210"</span> \
+  -d <span class="st">"message=Your OTP is 123456. Valid for 5 minutes."</span> \
+  -d <span class="st">"sender_id=MYSEND"</span> \
+  -d <span class="st">"entity_id=YOUR_ENTITY_ID"</span> \
+  -d <span class="st">"template_id=YOUR_TEMPLATE_ID"</span> \
+  -d <span class="st">"sms_type=transactional"</span></pre>
+                                </div>
+                            </li>
+                            <li style="font-size:14px">
+                                <b style="font-size:15px">Check the response</b>
+                                <div class="code-block mb-2 mt-2">
+                                    <div class="code-block-header">
+                                        <span class="code-lang">JSON Response</span>
+                                    </div>
+                                    <pre>{
+  <span class="st">"success"</span>: <span class="kw">true</span>,
+  <span class="st">"message"</span>: <span class="st">"SMS sent successfully"</span>,
+  <span class="st">"mobile"</span>: <span class="st">"919876543210"</span>,
+  <span class="st">"response"</span>: <span class="st">"1234567890-ABCDEF"</span>,
+  <span class="st">"balance"</span>: <span class="nu">49.80</span>
+}</pre>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Send SMS</h4>
+                            <p>This is the primary endpoint to send a single SMS message to a mobile number.</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="endpoint-box mb-2">
+                          <div class="endpoint-header" style="border:0px;">
+                            <span class="method-badge method-post">POST</span>
+                            <span class="method-badge method-get">GET</span>
+                            <span class="endpoint-url">{BASE_URL}/api/send.php</span>
+                          </div>
+                          <div class="endpoint-desc">Sends a single SMS. Both GET (query params) and POST (form body) methods are supported. POST is recommended for security.</div>
+                        </div>
+
+                        <h5 class="pt-20">Request Parameters</h5>
+
+                        <div class="table-wrap">
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Required</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><code>api_key</code></td>
+                                <td>string</td>
+                                <td><span class="req-badge req-yes">Required</span></td>
+                                <td>Your account API key for authentication.</td>
+                                <td><code>sk_a1b2c3...</code></td>
+                              </tr>
+                              <tr>
+                                <td><code>mobile</code></td>
+                                <td>string</td>
+                                <td><span class="req-badge req-yes">Required</span></td>
+                                <td>Recipient's mobile number. 10-digit Indian number (6–9 series). The system auto-prepends <code>91</code>.</td>
+                                <td><code>9876543210</code></td>
+                              </tr>
+                              <tr>
+                                <td><code>message</code></td>
+                                <td>string</td>
+                                <td><span class="req-badge req-yes">Required</span></td>
+                                <td>The SMS message content. Must match your DLT approved template exactly.</td>
+                                <td><code>Your OTP is 123456.</code></td>
+                              </tr>
+                              <tr>
+                                <td><code>sender_id</code></td>
+                                <td>string</td>
+                                <td><span class="req-badge req-yes">Required</span></td>
+                                <td>TRAI DLT registered Sender ID. 6-character alphanumeric.</td>
+                                <td><code>MYSEND</code></td>
+                              </tr>
+                              <tr>
+                                <td><code>entity_id</code></td>
+                                <td>string</td>
+                                <td><span class="req-badge req-yes">Required</span></td>
+                                <td>Your TRAI DLT registered Entity ID.</td>
+                                <td><code>1001XXXXXXXXX</code></td>
+                              </tr>
+                              <tr>
+                                <td><code>template_id</code></td>
+                                <td>string</td>
+                                <td><span class="req-badge req-yes">Required</span></td>
+                                <td>The DLT Template ID approved for this specific message.</td>
+                                <td><code>1007XXXXXXXXX</code></td>
+                              </tr>
+                              <tr>
+                                <td><code>sms_type</code></td>
+                                <td>string</td>
+                                <td><span class="req-badge req-no">Optional</span></td>
+                                <td>
+                                  Type of SMS. See SMS Types section for details.<br>
+                                  Default: <code>transactional</code>
+                                </td>
+                                <td><code>transactional</code></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+
+                        <h5 class="pt-40">Success Response <span class="status-pill status-200">200 OK</span></h5>
+
+                        <div class="code-block mb-4">
+                          <div class="code-block-header"><span class="code-lang">JSON</span></div>
+      <pre>{
+  <span class="st">"success"</span>: <span class="kw">true</span>,
+  <span class="st">"message"</span>: <span class="st">"SMS sent successfully"</span>,
+  <span class="st">"mobile"</span>: <span class="st">"919876543210"</span>,     <span class="cm">// Normalized number with country code</span>
+  <span class="st">"response"</span>: <span class="st">"MSG-ID-12345"</span>,      <span class="cm">// Message ID from carrier</span>
+  <span class="st">"balance"</span>: <span class="nu">49.80</span>               <span class="cm">// Remaining wallet balance (₹)</span>
+}</pre>
+                        </div>
+
+
+                        <h5>Error Response</h5>
+
+                        <div class="code-block">
+                          <div class="code-block-header"><span class="code-lang">JSON</span></div>
+      <pre>{
+  <span class="st">"success"</span>: <span class="kw">false</span>,
+  <span class="st">"error"</span>: <span class="st">"Invalid mobile number: 123456"</span>
+}</pre>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Check Balance</h4>
+                            <p>Retrieve your current wallet balance and SMS credit information.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="endpoint-box mb-4">
+                          <div class="endpoint-header" style="border: 0px;">
+                            <span class="method-badge method-get">GET</span>
+                            <span class="endpoint-url">{BASE_URL}/api/balance.php</span>
+                          </div>
+                          <div class="endpoint-desc">Returns current wallet balance, SMS rate per message, and estimated SMS count remaining.</div>
+                        </div>
+                        <h5>Request Parameters</h5>
+                        <div class="table-wrap mb-4">
+                          <table>
+        <thead><tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>api_key</code></td>
+            <td>string</td>
+            <td><span class="req-badge req-yes">Required</span></td>
+            <td>Your account API key.</td>
+          </tr>
+        </tbody>
+      </table>
+                        </div>
+
+                        <h5>Success Response <span class="status-pill status-200">200 OK</span></h5>
+                        <div class="code-block mb-4">
+      <div class="code-block-header"><span class="code-lang">JSON</span></div>
+      <pre>{
+  <span class="st">"success"</span>: <span class="kw">true</span>,
+  <span class="st">"balance"</span>: <span class="nu">49.80</span>,      <span class="cm">// Wallet balance in INR (₹)</span>
+  <span class="st">"sms_rate"</span>: <span class="nu">0.20</span>,     <span class="cm">// Cost per SMS in INR</span>
+  <span class="st">"sms_count"</span>: <span class="nu">249</span>      <span class="cm">// Estimated SMS credits remaining</span>
+}</pre>
+    </div>
+
+
+
+
+                        <div class="code-block">
+      <div class="code-block-header"><span class="code-lang">cURL Example</span></div>
+      <pre><span class="kw">curl</span> <span class="st">"{BASE_URL}/api/balance.php?api_key=sk_your_api_key"</span></pre>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>SMS Types (DLT)</h4>
+                            <p>India's TRAI mandates DLT (Distributed Ledger Technology) compliance. Choose the correct <code>sms_type</code> for your message:</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="table-wrap mb-4">
+      <table>
+        <thead><tr><th>sms_type Value</th><th>Use Case</th><th>Time Restriction (IST)</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><code>transactional</code> ⭐</td>
+            <td>OTP, transaction alerts, login codes, password reset — sent to opted-in users</td>
+            <td>✅ 24×7 allowed</td>
+          </tr>
+          <tr>
+            <td><code>service_implicit</code></td>
+            <td>Service messages to existing customers (bills, delivery updates)</td>
+            <td>✅ 24×7 allowed</td>
+          </tr>
+          <tr>
+            <td><code>promotional</code></td>
+            <td>Marketing/offers to opted-in users</td>
+            <td>⏰ 9:00 AM – 9:00 PM IST only</td>
+          </tr>
+          <tr>
+            <td><code>service_explicit</code></td>
+            <td>Service messages to users who have explicitly opted in</td>
+            <td>⏰ 9:00 AM – 9:00 PM IST only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+                        <div class="features-box p-4 " style="background:#f0fdf4; border-color: #bbf7d0;">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">✅</span>
+                                  <div class="info-card-body">
+                                    <strong>Recommendation:</strong> For OTPs, login codes, and system notifications — always use <code>sms_type=transactional</code>. It works 24×7 and is not subject to time restrictions.
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Mobile Number Format</h4>
+                            <p>The API accepts Indian mobile numbers in multiple formats and normalizes them automatically:</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="table-wrap">
+                          <table>
+                            <thead><tr><th>Input Format</th><th>Example</th><th>Stored As</th><th>Valid?</th></tr></thead>
+                            <tbody>
+                              <tr><td>10-digit</td><td><code>9876543210</code></td><td><code>919876543210</code></td><td>✅</td></tr>
+                              <tr><td>With country code</td><td><code>919876543210</code></td><td><code>919876543210</code></td><td>✅</td></tr>
+                              <tr><td>With leading zero</td><td><code>09876543210</code></td><td><code>919876543210</code></td><td>✅</td></tr>
+                              <tr><td>Must start with 6–9</td><td><code>5876543210</code></td><td>—</td><td>❌ Invalid</td></tr>
+                            </tbody>
+                          </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Rate Limits</h4>
+                            <p>To ensure platform stability, API requests are rate-limited per account:</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="table-wrap mb-4">
+                          <table>
+                            <thead><tr><th>Limit</th><th>Value</th><th>Error Code</th></tr></thead>
+                            <tbody>
+                              <tr>
+                                <td>Requests per minute</td>
+                                <td>60 requests / minute (configurable by admin)</td>
+                                <td><code>1009</code> — Rate limit exceeded</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+
+
+                        <div class="features-box p-4 mb-4" style="background:#fffbeb; border-color: #fde68a;">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">💡</span>
+      <div class="info-card-body">
+        When you hit the rate limit, wait 60 seconds and retry. Implement exponential backoff in your application for robust handling.
+      </div>
+                            </div>
+                        </div>
+
+                        <h5>Retry Logic (Recommended)</h5>
+                        <div class="code-block">
+      <div class="code-block-header"><span class="code-lang">PHP</span></div>
+      <pre><span class="kw">function</span> <span class="fn">sendSmsWithRetry</span>(<span class="va">$params</span>, <span class="va">$maxRetries</span> = <span class="nu">3</span>): <span class="kw">array</span> {
+    <span class="va">$attempt</span> = <span class="nu">0</span>;
+    <span class="kw">while</span> (<span class="va">$attempt</span> < <span class="va">$maxRetries</span>) {
+        <span class="va">$response</span> = <span class="fn">sendSms</span>(<span class="va">$params</span>);
+        <span class="kw">if</span> (<span class="va">$response</span>[<span class="st">'success'</span>] || <span class="fn">http_response_code</span>() !== <span class="nu">429</span>) {
+            <span class="kw">return</span> <span class="va">$response</span>;
+        }
+        <span class="va">$delay</span> = (<span class="nu">2</span> ** <span class="va">$attempt</span>) * <span class="nu">1000000</span>; <span class="cm">// exponential backoff (microseconds)</span>
+        <span class="fn">usleep</span>(<span class="va">$delay</span>);
+        <span class="va">$attempt</span>++;
+    }
+    <span class="kw">return</span> [<span class="st">'success'</span> => <span class="kw">false</span>, <span class="st">'error'</span> => <span class="st">'Max retries exceeded'</span>];
+}</pre>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Response Format</h4>
+                            <p>All API responses return <code>Content-Type: application/json</code>. The response always contains a <code>success</code> boolean field.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+
+
+                        <h5>Success Response Structure</h5>
+    <div class="code-block">
+      <div class="code-block-header"><span class="code-lang">JSON</span></div>
+      <pre>{
+  <span class="st">"success"</span>: <span class="kw">true</span>,         <span class="cm">// Always present</span>
+  <span class="st">"message"</span>: <span class="st">"SMS sent successfully"</span>,
+  <span class="st">"mobile"</span>: <span class="st">"919876543210"</span>,  <span class="cm">// Normalized mobile</span>
+  <span class="st">"response"</span>: <span class="st">"MSG-ID-XYZ"</span>,   <span class="cm">// Carrier message ID</span>
+  <span class="st">"balance"</span>: <span class="nu">49.80</span>           <span class="cm">// Remaining balance</span>
+}</pre>
+    </div>
+
+    <h5>Error Response Structure</h5>
+    <div class="code-block mb-4">
+      <div class="code-block-header"><span class="code-lang">JSON</span></div>
+      <pre>{
+  <span class="st">"success"</span>: <span class="kw">false</span>,             <span class="cm">// Always present</span>
+  <span class="st">"error"</span>: <span class="st">"Error description"</span>,  <span class="cm">// Human-readable error</span>
+  <span class="st">"balance"</span>: <span class="nu">0.00</span>              <span class="cm">// Sometimes included</span>
+}</pre>
+    </div>
+
+    <h5>Time-Restricted Response (Promotional SMS)</h5>
+    <div class="code-block">
+      <div class="code-block-header"><span class="code-lang">JSON</span></div>
+      <pre>{
+  <span class="st">"success"</span>: <span class="kw">false</span>,
+  <span class="st">"error"</span>: <span class="st">"Promotional SMS is only allowed between 9:00 AM – 9:00 PM IST."</span>,
+  <span class="st">"sms_type"</span>: <span class="st">"promotional"</span>,
+  <span class="st">"ist_time"</span>: <span class="st">"10:35 PM IST"</span>   <span class="cm">// Wallet NOT deducted</span>
+}</pre>
+    </div>
+
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Error Codes</h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="table-wrap mb-4">
+      <table>
+        <thead><tr><th>Error Code</th><th>HTTP Status</th><th>Description</th><th>Solution</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="error-code">1001</span></td>
+            <td><span class="status-pill status-401">401</span></td>
+            <td>API key missing or invalid / inactive account</td>
+            <td>Verify your API key from the dashboard.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1002</span></td>
+            <td><span class="status-pill status-402">402</span></td>
+            <td>Insufficient wallet balance</td>
+            <td>Recharge your wallet from the dashboard.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1003</span></td>
+            <td><span class="status-pill status-400">400</span></td>
+            <td>Invalid mobile number format</td>
+            <td>Ensure 10-digit Indian number starting with 6–9.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1004</span></td>
+            <td><span class="status-pill status-400">400</span></td>
+            <td>Sender ID missing or not configured</td>
+            <td>Provide a valid DLT-registered Sender ID.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1005</span></td>
+            <td><span class="status-pill status-400">400</span></td>
+            <td>Entity ID missing</td>
+            <td>Provide your TRAI DLT Entity ID.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1006</span></td>
+            <td><span class="status-pill status-400">400</span></td>
+            <td>DLT Template ID missing or invalid</td>
+            <td>Provide the correct DLT Template ID for this message type.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1008</span></td>
+            <td><span class="status-pill status-400">400</span></td>
+            <td>Number is on DND (Do Not Disturb) list</td>
+            <td>Cannot send to DND numbers for promotional SMS.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1009</span></td>
+            <td><span class="status-pill status-429">429</span></td>
+            <td>Rate limit exceeded (60 req/min)</td>
+            <td>Slow down requests; implement retry with backoff.</td>
+          </tr>
+          <tr>
+            <td><span class="error-code">1016</span></td>
+            <td><span class="status-pill status-400">400</span></td>
+            <td>Time restriction violated (promotional SMS outside 9AM–9PM IST)</td>
+            <td>Send only between 9:00 AM – 9:00 PM IST. Wallet not deducted.</td>
+          </tr>
+          <tr>
+            <td>—</td>
+            <td><span class="status-pill status-500">500</span></td>
+            <td>SMS delivery failed (carrier error)</td>
+            <td>Retry. Wallet is NOT deducted on failure.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="features-box p-4" style="background:#f0fdf4; border-color: #bbf7d0;">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">💰</span>
+      <div class="info-card-body">
+        <strong>Fair Billing:</strong> Your wallet is deducted <strong>only</strong> after successful SMS delivery confirmation. Failed deliveries cost ₹0.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>HTTP Status Codes</h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="table-wrap">
+      <table>
+        <thead><tr><th>HTTP Code</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><span class="status-pill status-200">200 OK</span></td><td>Request successful. Check <code>success</code> field in JSON for delivery status.</td></tr>
+          <tr><td><span class="status-pill status-400">400 Bad Request</span></td><td>Missing or invalid parameters.</td></tr>
+          <tr><td><span class="status-pill status-401">401 Unauthorized</span></td><td>Invalid or missing API key.</td></tr>
+          <tr><td><span class="status-pill status-402">402 Payment Required</span></td><td>Insufficient wallet balance.</td></tr>
+          <tr><td><span class="status-pill status-429">429 Too Many Requests</span></td><td>Rate limit exceeded.</td></tr>
+          <tr><td><span class="status-pill status-500">500 Internal Error</span></td><td>Carrier-side delivery failure.</td></tr>
+        </tbody>
+      </table>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Multi-Template Integration Guide</h4>
+                            <p>
+                              If your application uses multiple message templates (e.g., License Management, ERP, CRM), each template must have its own DLT-registered <code>template_id</code>.
+                              Always pass the matching <code>template_id</code> for each message type.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="features-box p-4 mb-4" style="background:#f0fdf4; border-color: #bbf7d0;">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">📋</span>
+                                  <div class="info-card-body">
+                                    <strong>Key Rule:</strong> Each unique message format (OTP, License Key, Payment Confirmation, etc.) needs a separate DLT-approved template with a unique <code>template_id</code>.
+                                  </div>
+                            </div>
+                        </div>
+
+                        <h5>Example: License Management System (20+ Templates)</h5>
+                        <div class="code-block mb-4">
+      <div class="code-block-header"><span class="code-lang">PHP — Template Config</span></div>
+      <pre><span class="cm">// Define all your DLT templates in one config file</span>
+<span class="kw">define</span>(<span class="st">'SMS_TEMPLATES'</span>, [
+
+    <span class="cm">// ── OTP & Authentication ──</span>
+    <span class="st">'otp_login'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX001'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Your login OTP is {otp}. Valid for 5 minutes. Do not share. - MYSEND'</span>,
+    ],
+    <span class="st">'otp_register'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX002'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Welcome! Your registration OTP is {otp}. Valid for 10 minutes. - MYSEND'</span>,
+    ],
+
+    <span class="cm">// ── License Events ──</span>
+    <span class="st">'license_generated'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX003'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Your license key is {license_key}. Product: {product}. - MYSEND'</span>,
+    ],
+    <span class="st">'license_expiry_alert'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX004'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Alert: Your {product} license expires on {date}. Renew now. - MYSEND'</span>,
+    ],
+    <span class="st">'license_expired'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX005'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Your {product} license has expired. Contact support. - MYSEND'</span>,
+    ],
+    <span class="st">'license_renewed'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX006'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Your {product} license renewed successfully until {date}. - MYSEND'</span>,
+    ],
+    <span class="st">'license_blocked'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX007'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Your {product} license has been blocked. Contact support: {phone}. - MYSEND'</span>,
+    ],
+    <span class="st">'new_license_key'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX008'</span>,
+        <span class="st">'message'</span>     => <span class="st">'New license key issued: {license_key}. Valid till {date}. - MYSEND'</span>,
+    ],
+    <span class="st">'renewal_reminder'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX009'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Reminder: Renew your {product} license before {date} to avoid disruption. - MYSEND'</span>,
+    ],
+
+    <span class="cm">// ── Payment ──</span>
+    <span class="st">'payment_success'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX010'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Payment of Rs.{amount} received for {product}. Txn ID: {txn_id}. - MYSEND'</span>,
+    ],
+    <span class="st">'payment_failed'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX011'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Payment of Rs.{amount} failed. Please retry or contact support. - MYSEND'</span>,
+    ],
+    <span class="st">'invoice_generated'</span> => [
+        <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX012'</span>,
+        <span class="st">'message'</span>     => <span class="st">'Invoice #{invoice_no} of Rs.{amount} generated. Download: {link} - MYSEND'</span>,
+    ],
+
+]);
+
+<span class="cm">/**
+ * Send an SMS using a named template.
+ *
+ * @param string $templateKey  Key from SMS_TEMPLATES (e.g., 'license_generated')
+ * @param string $mobile       10-digit mobile number
+ * @param array  $vars         Placeholder replacements (['license_key' => 'XXXX', ...])
+ */</span>
+<span class="kw">function</span> <span class="fn">sendTemplateSms</span>(<span class="va">$templateKey</span>, <span class="va">$mobile</span>, <span class="kw">array</span> <span class="va">$vars</span>): <span class="kw">array</span> {
+    <span class="va">$config</span> = SMS_TEMPLATES[<span class="va">$templateKey</span>] ?? <span class="kw">null</span>;
+
+    <span class="kw">if</span> (!<span class="va">$config</span>) {
+        <span class="kw">throw new</span> \<span class="fn">InvalidArgumentException</span>(<span class="st">"Unknown SMS template: {$templateKey}"</span>);
+    }
+
+    <span class="cm">// Replace {placeholder} with actual values</span>
+    <span class="va">$message</span> = <span class="va">$config</span>[<span class="st">'message'</span>];
+    <span class="kw">foreach</span> (<span class="va">$vars</span> <span class="kw">as</span> <span class="va">$key</span> => <span class="va">$value</span>) {
+        <span class="va">$message</span> = <span class="fn">str_replace</span>(<span class="st">"{{$key}}"</span>, <span class="va">$value</span>, <span class="va">$message</span>);
+    }
+
+    <span class="va">$postData</span> = <span class="fn">http_build_query</span>([
+        <span class="st">'api_key'</span>     => <span class="st">'sk_your_api_key'</span>,
+        <span class="st">'mobile'</span>      => <span class="va">$mobile</span>,
+        <span class="st">'message'</span>     => <span class="va">$message</span>,
+        <span class="st">'sender_id'</span>   => <span class="st">'MYSEND'</span>,
+        <span class="st">'entity_id'</span>   => <span class="st">'YOUR_ENTITY_ID'</span>,
+        <span class="st">'template_id'</span> => <span class="va">$config</span>[<span class="st">'template_id'</span>],
+        <span class="st">'sms_type'</span>    => <span class="st">'transactional'</span>,
+    ]);
+
+    <span class="va">$ch</span> = <span class="fn">curl_init</span>(<span class="st">'{BASE_URL}/api/send.php'</span>);
+    <span class="fn">curl_setopt_array</span>(<span class="va">$ch</span>, [
+        CURLOPT_POST           => <span class="kw">true</span>,
+        CURLOPT_POSTFIELDS     => <span class="va">$postData</span>,
+        CURLOPT_RETURNTRANSFER => <span class="kw">true</span>,
+        CURLOPT_TIMEOUT        => <span class="nu">30</span>,
+    ]);
+    <span class="va">$response</span> = <span class="fn">json_decode</span>(<span class="fn">curl_exec</span>(<span class="va">$ch</span>), <span class="kw">true</span>);
+    <span class="fn">curl_close</span>(<span class="va">$ch</span>);
+    <span class="kw">return</span> <span class="va">$response</span>;
+}
+
+<span class="cm">// ── Usage Examples ──────────────────────────────</span>
+
+<span class="cm">// Send OTP</span>
+<span class="fn">sendTemplateSms</span>(<span class="st">'otp_login'</span>, <span class="st">'9876543210'</span>, [<span class="st">'otp'</span> => <span class="st">'847291'</span>]);
+
+<span class="cm">// Send license generated SMS</span>
+<span class="fn">sendTemplateSms</span>(<span class="st">'license_generated'</span>, <span class="st">'9876543210'</span>, [
+    <span class="st">'license_key'</span> => <span class="st">'LIC-2024-ABCD-1234'</span>,
+    <span class="st">'product'</span>     => <span class="st">'MyApp Pro'</span>,
+]);
+
+<span class="cm">// Send payment success</span>
+<span class="fn">sendTemplateSms</span>(<span class="st">'payment_success'</span>, <span class="st">'9876543210'</span>, [
+    <span class="st">'amount'</span>  => <span class="st">'2999'</span>,
+    <span class="st">'product'</span> => <span class="st">'MyApp Pro Annual'</span>,
+    <span class="st">'txn_id'</span>  => <span class="st">'TXN20240115001'</span>,
+]);
+
+<span class="cm">// Send renewal reminder</span>
+<span class="fn">sendTemplateSms</span>(<span class="st">'renewal_reminder'</span>, <span class="st">'9876543210'</span>, [
+    <span class="st">'product'</span> => <span class="st">'MyApp Pro'</span>,
+    <span class="st">'date'</span>    => <span class="st">'31 Jan 2025'</span>,
+]);</pre>
+    </div>
+
+
+    <h5>Automated Batch Notifications</h5>
+    <div class="code-block">
+      <div class="code-block-header"><span class="code-lang">PHP — Send to Multiple Users</span></div>
+      <pre><span class="cm">// Notify all users whose license expires in 7 days</span>
+<span class="va">$expiringUsers</span> = <span class="va">$db</span>-><span class="fn">query</span>(<span class="st">"
+    SELECT mobile, name, product_name, expiry_date
+    FROM licenses
+    WHERE expiry_date = DATE_ADD(CURDATE(), INTERVAL 7 DAY)
+      AND status = 'active'
+"</span>);
+
+<span class="kw">foreach</span> (<span class="va">$expiringUsers</span> <span class="kw">as</span> <span class="va">$user</span>) {
+    <span class="fn">sendTemplateSms</span>(<span class="st">'license_expiry_alert'</span>, <span class="va">$user</span>[<span class="st">'mobile'</span>], [
+        <span class="st">'product'</span> => <span class="va">$user</span>[<span class="st">'product_name'</span>],
+        <span class="st">'date'</span>    => <span class="fn">date</span>(<span class="st">'d M Y'</span>, <span class="fn">strtotime</span>(<span class="va">$user</span>[<span class="st">'expiry_date'</span>])),
+    ]);
+    <span class="fn">usleep</span>(<span class="nu">200000</span>); <span class="cm">// 200ms delay to respect rate limits</span>
+}</pre>
+    </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Code Examples</h4>
+                            <p>
+                              Complete working examples in popular programming languages and frameworks.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+
+                        <div class="tabs">
+      <div class="tab-buttons mb-4">
+        <button class="tab-btn active" onclick="showTab(event,'tab-php')">PHP</button>
+        <button class="tab-btn" onclick="showTab(event,'tab-python')">Python</button>
+        <button class="tab-btn" onclick="showTab(event,'tab-node')">Node.js</button>
+        <button class="tab-btn" onclick="showTab(event,'tab-java')">Java</button>
+        <button class="tab-btn" onclick="showTab(event,'tab-csharp')">C#</button>
+        <button class="tab-btn" onclick="showTab(event,'tab-fetch')">JavaScript (Fetch)</button>
+        <button class="tab-btn" onclick="showTab(event,'tab-curl')">cURL</button>
+      </div>
+
+      <!-- PHP -->
+      <div class="tab-panel active" id="tab-php">
+        <div class="code-block">
+          <div class="code-block-header"><span class="code-lang">PHP — cURL</span></div>
+          <pre><span class="kw">function</span> <span class="fn">sendSms</span>(<span class="kw">array</span> <span class="va">$params</span>): <span class="kw">array</span> {
+    <span class="va">$baseUrl</span> = <span class="st">'{BASE_URL}'</span>;
+
+    <span class="va">$payload</span> = <span class="fn">array_merge</span>([
+        <span class="st">'api_key'</span>   => <span class="st">'sk_your_api_key'</span>,
+        <span class="st">'sender_id'</span> => <span class="st">'MYSEND'</span>,
+        <span class="st">'entity_id'</span> => <span class="st">'YOUR_ENTITY_ID'</span>,
+        <span class="st">'sms_type'</span>  => <span class="st">'transactional'</span>,
+    ], <span class="va">$params</span>);
+
+    <span class="va">$ch</span> = <span class="fn">curl_init</span>(<span class="va">$baseUrl</span> . <span class="st">'/api/send.php'</span>);
+    <span class="fn">curl_setopt_array</span>(<span class="va">$ch</span>, [
+        CURLOPT_POST           => <span class="kw">true</span>,
+        CURLOPT_POSTFIELDS     => <span class="fn">http_build_query</span>(<span class="va">$payload</span>),
+        CURLOPT_RETURNTRANSFER => <span class="kw">true</span>,
+        CURLOPT_TIMEOUT        => <span class="nu">30</span>,
+        CURLOPT_SSL_VERIFYPEER => <span class="kw">true</span>,
+    ]);
+
+    <span class="va">$body</span> = <span class="fn">curl_exec</span>(<span class="va">$ch</span>);
+    <span class="va">$err</span>  = <span class="fn">curl_error</span>(<span class="va">$ch</span>);
+    <span class="fn">curl_close</span>(<span class="va">$ch</span>);
+
+    <span class="kw">if</span> (<span class="va">$err</span>) <span class="kw">return</span> [<span class="st">'success'</span> => <span class="kw">false</span>, <span class="st">'error'</span> => <span class="va">$err</span>];
+    <span class="kw">return</span> <span class="fn">json_decode</span>(<span class="va">$body</span>, <span class="kw">true</span>) ?: [<span class="st">'success'</span> => <span class="kw">false</span>, <span class="st">'error'</span> => <span class="st">'Invalid response'</span>];
+}
+
+<span class="cm">// Send OTP</span>
+<span class="va">$result</span> = <span class="fn">sendSms</span>([
+    <span class="st">'mobile'</span>      => <span class="st">'9876543210'</span>,
+    <span class="st">'message'</span>     => <span class="st">'Your OTP is 123456. Valid for 5 minutes.'</span>,
+    <span class="st">'template_id'</span> => <span class="st">'1007XXXXXXXXX001'</span>,
+]);
+
+<span class="kw">if</span> (<span class="va">$result</span>[<span class="st">'success'</span>]) {
+    <span class="fn">echo</span> <span class="st">"SMS sent! Balance: ₹"</span> . <span class="va">$result</span>[<span class="st">'balance'</span>];
+} <span class="kw">else</span> {
+    <span class="fn">echo</span> <span class="st">"Error: "</span> . <span class="va">$result</span>[<span class="st">'error'</span>];
+}</pre>
+        </div>
+      </div>
+
+      <!-- Python -->
+      <div class="tab-panel" id="tab-python">
+        <div class="code-block">
+          <div class="code-block-header"><span class="code-lang">Python — requests</span></div>
+          <pre><span class="kw">import</span> requests
+
+BASE_URL = <span class="st">"{BASE_URL}"</span>
+API_KEY  = <span class="st">"sk_your_api_key"</span>
+
+<span class="kw">def</span> <span class="fn">send_sms</span>(mobile: <span class="va">str</span>, message: <span class="va">str</span>, template_id: <span class="va">str</span>,
+            sender_id: <span class="va">str</span> = <span class="st">"MYSEND"</span>, sms_type: <span class="va">str</span> = <span class="st">"transactional"</span>) -> <span class="va">dict</span>:
+    <span class="st">"""Send a single SMS via the gateway."""</span>
+    response = requests.<span class="fn">post</span>(
+        f<span class="st">"{BASE_URL}/api/send.php"</span>,
+        data={
+            <span class="st">"api_key"</span>:     API_KEY,
+            <span class="st">"mobile"</span>:      mobile,
+            <span class="st">"message"</span>:     message,
+            <span class="st">"sender_id"</span>:   sender_id,
+            <span class="st">"entity_id"</span>:   <span class="st">"YOUR_ENTITY_ID"</span>,
+            <span class="st">"template_id"</span>: template_id,
+            <span class="st">"sms_type"</span>:    sms_type,
+        },
+        timeout=<span class="nu">30</span>
+    )
+    response.raise_for_status()
+    <span class="kw">return</span> response.json()
+
+<span class="kw">def</span> <span class="fn">check_balance</span>() -> <span class="va">dict</span>:
+    <span class="st">"""Check current wallet balance."""</span>
+    response = requests.<span class="fn">get</span>(
+        f<span class="st">"{BASE_URL}/api/balance.php"</span>,
+        params={<span class="st">"api_key"</span>: API_KEY},
+        timeout=<span class="nu">15</span>
+    )
+    <span class="kw">return</span> response.json()
+
+<span class="cm"># ── Usage ─────────────────────────────────────────</span>
+
+<span class="cm"># Send OTP</span>
+result = <span class="fn">send_sms</span>(
+    mobile=<span class="st">"9876543210"</span>,
+    message=<span class="st">"Your OTP is 123456. Valid for 5 minutes."</span>,
+    template_id=<span class="st">"1007XXXXXXXXX001"</span>
+)
+<span class="kw">if</span> result[<span class="st">"success"</span>]:
+    <span class="fn">print</span>(f<span class="st">"Sent! Balance: ₹{result['balance']}"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(f<span class="st">"Failed: {result['error']}"</span>)
+
+<span class="cm"># Send License Generated notification</span>
+<span class="fn">send_sms</span>(
+    mobile=<span class="st">"9876543210"</span>,
+    message=<span class="st">"Your license key is LIC-2024-ABCD-1234. Product: MyApp Pro."</span>,
+    template_id=<span class="st">"1007XXXXXXXXX003"</span>
+)
+
+<span class="cm"># Check balance</span>
+bal = <span class="fn">check_balance</span>()
+<span class="fn">print</span>(f<span class="st">"Balance: ₹{bal['balance']} | SMS credits: {bal['sms_count']}"</span>)</pre>
+        </div>
+      </div>
+
+      <!-- Node.js -->
+      <div class="tab-panel" id="tab-node">
+        <div class="code-block">
+          <div class="code-block-header"><span class="code-lang">Node.js — axios</span></div>
+          <pre><span class="kw">const</span> axios = <span class="fn">require</span>(<span class="st">'axios'</span>);
+<span class="kw">const</span> qs    = <span class="fn">require</span>(<span class="st">'querystring'</span>);
+
+<span class="kw">const</span> BASE_URL = <span class="st">'{BASE_URL}'</span>;
+<span class="kw">const</span> API_KEY  = <span class="st">'sk_your_api_key'</span>;
+
+<span class="kw">async function</span> <span class="fn">sendSms</span>({ mobile, message, templateId, smsType = <span class="st">'transactional'</span> }) {
+    <span class="kw">const</span> { data } = <span class="kw">await</span> axios.<span class="fn">post</span>(
+        <span class="st">`${BASE_URL}/api/send.php`</span>,
+        <span class="fn">qs.stringify</span>({
+            api_key:     API_KEY,
+            mobile,
+            message,
+            sender_id:   <span class="st">'MYSEND'</span>,
+            entity_id:   <span class="st">'YOUR_ENTITY_ID'</span>,
+            template_id: templateId,
+            sms_type:    smsType,
+        }),
+        { headers: { <span class="st">'Content-Type'</span>: <span class="st">'application/x-www-form-urlencoded'</span> }, timeout: <span class="nu">30000</span> }
+    );
+    <span class="kw">return</span> data;
+}
+
+<span class="kw">async function</span> <span class="fn">checkBalance</span>() {
+    <span class="kw">const</span> { data } = <span class="kw">await</span> axios.<span class="fn">get</span>(<span class="st">`${BASE_URL}/api/balance.php`</span>, {
+        params: { api_key: API_KEY }
+    });
+    <span class="kw">return</span> data;
+}
+
+<span class="cm">// ── Usage ─────────────────────────────────────────</span>
+(<span class="kw">async</span> () => {
+    <span class="cm">// Send OTP</span>
+    <span class="kw">const</span> result = <span class="kw">await</span> <span class="fn">sendSms</span>({
+        mobile:     <span class="st">'9876543210'</span>,
+        message:    <span class="st">'Your OTP is 123456. Valid for 5 minutes.'</span>,
+        templateId: <span class="st">'1007XXXXXXXXX001'</span>,
+    });
+    console.<span class="fn">log</span>(result.success ? <span class="st">`Sent! Balance: ₹${result.balance}`</span> : <span class="st">`Error: ${result.error}`</span>);
+
+    <span class="cm">// Check balance</span>
+    <span class="kw">const</span> bal = <span class="kw">await</span> <span class="fn">checkBalance</span>();
+    console.<span class="fn">log</span>(<span class="st">`Balance: ₹${bal.balance} | Credits: ${bal.sms_count}`</span>);
+})();</pre>
+        </div>
+      </div>
+
+      <!-- Java -->
+      <div class="tab-panel" id="tab-java">
+        <div class="code-block">
+          <div class="code-block-header"><span class="code-lang">Java — HttpURLConnection</span></div>
+          <pre><span class="kw">import</span> java.net.*;
+<span class="kw">import</span> java.io.*;
+<span class="kw">import</span> org.json.*;
+
+<span class="kw">public class</span> <span class="fn">SmsGateway</span> {
+
+    <span class="kw">private static final</span> String BASE_URL = <span class="st">"{BASE_URL}"</span>;
+    <span class="kw">private static final</span> String API_KEY  = <span class="st">"sk_your_api_key"</span>;
+
+    <span class="kw">public static</span> JSONObject <span class="fn">sendSms</span>(String mobile, String message,
+                                       String templateId) <span class="kw">throws</span> Exception {
+        String body = <span class="st">"api_key="</span> + API_KEY +
+                      <span class="st">"&mobile="</span>      + URLEncoder.<span class="fn">encode</span>(mobile, <span class="st">"UTF-8"</span>) +
+                      <span class="st">"&message="</span>     + URLEncoder.<span class="fn">encode</span>(message, <span class="st">"UTF-8"</span>) +
+                      <span class="st">"&sender_id=MYSEND"</span> +
+                      <span class="st">"&entity_id=YOUR_ENTITY_ID"</span> +
+                      <span class="st">"&template_id="</span> + templateId +
+                      <span class="st">"&sms_type=transactional"</span>;
+
+        URL url = <span class="kw">new</span> <span class="fn">URL</span>(BASE_URL + <span class="st">"/api/send.php"</span>);
+        HttpURLConnection conn = (HttpURLConnection) url.<span class="fn">openConnection</span>();
+        conn.<span class="fn">setRequestMethod</span>(<span class="st">"POST"</span>);
+        conn.<span class="fn">setDoOutput</span>(<span class="kw">true</span>);
+        conn.<span class="fn">setConnectTimeout</span>(<span class="nu">10000</span>);
+        conn.<span class="fn">setReadTimeout</span>(<span class="nu">30000</span>);
+
+        <span class="kw">try</span> (OutputStream os = conn.<span class="fn">getOutputStream</span>()) {
+            os.<span class="fn">write</span>(body.<span class="fn">getBytes</span>(<span class="st">"UTF-8"</span>));
+        }
+
+        BufferedReader br = <span class="kw">new</span> <span class="fn">BufferedReader</span>(
+            <span class="kw">new</span> <span class="fn">InputStreamReader</span>(conn.<span class="fn">getInputStream</span>(), <span class="st">"UTF-8"</span>));
+        StringBuilder sb = <span class="kw">new</span> <span class="fn">StringBuilder</span>();
+        String line;
+        <span class="kw">while</span> ((line = br.<span class="fn">readLine</span>()) != <span class="kw">null</span>) sb.<span class="fn">append</span>(line);
+
+        <span class="kw">return new</span> <span class="fn">JSONObject</span>(sb.<span class="fn">toString</span>());
+    }
+
+    <span class="kw">public static void</span> <span class="fn">main</span>(String[] args) <span class="kw">throws</span> Exception {
+        JSONObject result = <span class="fn">sendSms</span>(<span class="st">"9876543210"</span>,
+            <span class="st">"Your OTP is 123456. Valid for 5 minutes."</span>, <span class="st">"1007XXXXXXXXX001"</span>);
+
+        <span class="kw">if</span> (result.<span class="fn">getBoolean</span>(<span class="st">"success"</span>)) {
+            System.out.<span class="fn">println</span>(<span class="st">"Sent! Balance: ₹"</span> + result.<span class="fn">getDouble</span>(<span class="st">"balance"</span>));
+        } <span class="kw">else</span> {
+            System.out.<span class="fn">println</span>(<span class="st">"Error: "</span> + result.<span class="fn">getString</span>(<span class="st">"error"</span>));
+        }
+    }
+}</pre>
+        </div>
+      </div>
+
+      <!-- C# -->
+      <div class="tab-panel" id="tab-csharp">
+        <div class="code-block">
+          <div class="code-block-header"><span class="code-lang">C# — HttpClient</span></div>
+          <pre><span class="kw">using</span> System.Net.Http;
+<span class="kw">using</span> System.Text.Json;
+
+<span class="kw">public class</span> <span class="fn">SmsGateway</span> {
+    <span class="kw">private const string</span> BASE_URL = <span class="st">"{BASE_URL}"</span>;
+    <span class="kw">private const string</span> API_KEY  = <span class="st">"sk_your_api_key"</span>;
+
+    <span class="kw">private static readonly</span> HttpClient _client = <span class="kw">new</span>() { Timeout = TimeSpan.<span class="fn">FromSeconds</span>(<span class="nu">30</span>) };
+
+    <span class="kw">public static async</span> Task&lt;JsonElement&gt; <span class="fn">SendSmsAsync</span>(
+        string mobile, string message, string templateId, string smsType = <span class="st">"transactional"</span>) {
+
+        <span class="kw">var</span> form = <span class="kw">new</span> FormUrlEncodedContent(<span class="kw">new</span>[] {
+            <span class="kw">new</span> KeyValuePair&lt;string,string&gt;(<span class="st">"api_key"</span>,     API_KEY),
+            <span class="kw">new</span> KeyValuePair&lt;string,string&gt;(<span class="st">"mobile"</span>,      mobile),
+            <span class="kw">new</span> KeyValuePair&lt;string,string&gt;(<span class="st">"message"</span>,     message),
+            <span class="kw">new</span> KeyValuePair&lt;string,string&gt;(<span class="st">"sender_id"</span>,   <span class="st">"MYSEND"</span>),
+            <span class="kw">new</span> KeyValuePair&lt;string,string&gt;(<span class="st">"entity_id"</span>,   <span class="st">"YOUR_ENTITY_ID"</span>),
+            <span class="kw">new</span> KeyValuePair&lt;string,string&gt;(<span class="st">"template_id"</span>, templateId),
+            <span class="kw">new</span> KeyValuePair&lt;string,string&gt;(<span class="st">"sms_type"</span>,    smsType),
+        });
+
+        <span class="kw">var</span> response = <span class="kw">await</span> _client.<span class="fn">PostAsync</span>(<span class="st">$"{BASE_URL}/api/send.php"</span>, form);
+        <span class="kw">var</span> content  = <span class="kw">await</span> response.Content.<span class="fn">ReadAsStringAsync</span>();
+        <span class="kw">return</span> JsonSerializer.<span class="fn">Deserialize</span>&lt;JsonElement&gt;(content);
+    }
+
+    <span class="cm">// Usage</span>
+    <span class="kw">public static async</span> Task <span class="fn">Main</span>() {
+        <span class="kw">var</span> result = <span class="kw">await</span> <span class="fn">SendSmsAsync</span>(
+            <span class="st">"9876543210"</span>,
+            <span class="st">"Your OTP is 123456. Valid for 5 minutes."</span>,
+            <span class="st">"1007XXXXXXXXX001"</span>
+        );
+        <span class="kw">if</span> (result.<span class="fn">GetProperty</span>(<span class="st">"success"</span>).<span class="fn">GetBoolean</span>())
+            Console.<span class="fn">WriteLine</span>(<span class="st">$"Sent! Balance: ₹{result.GetProperty("balance").GetDouble()}"</span>);
+        <span class="kw">else</span>
+            Console.<span class="fn">WriteLine</span>(<span class="st">$"Error: {result.GetProperty("error").GetString()}"</span>);
+    }
+}</pre>
+        </div>
+      </div>
+
+      <!-- JavaScript Fetch -->
+      <div class="tab-panel" id="tab-fetch">
+        <div class="code-block">
+          <div class="code-block-header"><span class="code-lang">JavaScript — Fetch API (Server-side only)</span></div>
+          <pre><span class="cm">// ⚠️ Always call from your backend — never expose API key in browser</span>
+<span class="kw">const</span> BASE_URL = <span class="st">'{BASE_URL}'</span>;
+<span class="kw">const</span> API_KEY  = <span class="st">'sk_your_api_key'</span>;
+
+<span class="kw">async function</span> <span class="fn">sendSms</span>({ mobile, message, templateId, smsType = <span class="st">'transactional'</span> }) {
+    <span class="kw">const</span> body = <span class="kw">new</span> <span class="fn">URLSearchParams</span>({
+        api_key:     API_KEY,
+        mobile,
+        message,
+        sender_id:   <span class="st">'MYSEND'</span>,
+        entity_id:   <span class="st">'YOUR_ENTITY_ID'</span>,
+        template_id: templateId,
+        sms_type:    smsType,
+    });
+
+    <span class="kw">const</span> res  = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="st">`${BASE_URL}/api/send.php`</span>, { method: <span class="st">'POST'</span>, body });
+    <span class="kw">const</span> data = <span class="kw">await</span> res.<span class="fn">json</span>();
+    <span class="kw">return</span> data;
+}
+
+<span class="cm">// Usage</span>
+<span class="fn">sendSms</span>({
+    mobile:     <span class="st">'9876543210'</span>,
+    message:    <span class="st">'Your OTP is 123456. Valid for 5 minutes.'</span>,
+    templateId: <span class="st">'1007XXXXXXXXX001'</span>,
+}).<span class="fn">then</span>(res => {
+    <span class="kw">if</span> (res.success) console.<span class="fn">log</span>(<span class="st">'SMS sent! Balance: ₹'</span> + res.balance);
+    <span class="kw">else</span>            console.<span class="fn">error</span>(<span class="st">'Error: '</span> + res.error);
+});</pre>
+        </div>
+      </div>
+
+      <!-- cURL -->
+      <div class="tab-panel" id="tab-curl">
+        <div class="code-block mb-2">
+          <div class="code-block-header"><span class="code-lang">cURL — Send SMS</span></div>
+          <pre><span class="kw">curl</span> -X POST <span class="st">"{BASE_URL}/api/send.php"</span> \
+  -H <span class="st">"Content-Type: application/x-www-form-urlencoded"</span> \
+  -d <span class="st">"api_key=sk_your_api_key"</span> \
+  -d <span class="st">"mobile=9876543210"</span> \
+  -d <span class="st">"message=Your OTP is 123456. Valid for 5 minutes."</span> \
+  -d <span class="st">"sender_id=MYSEND"</span> \
+  -d <span class="st">"entity_id=YOUR_ENTITY_ID"</span> \
+  -d <span class="st">"template_id=1007XXXXXXXXX001"</span> \
+  -d <span class="st">"sms_type=transactional"</span></pre>
+        </div>
+        <div class="code-block mb-2">
+          <div class="code-block-header"><span class="code-lang">cURL — Check Balance</span></div>
+          <pre><span class="kw">curl</span> <span class="st">"{BASE_URL}/api/balance.php?api_key=sk_your_api_key"</span></pre>
+        </div>
+        <div class="code-block">
+          <div class="code-block-header"><span class="code-lang">cURL — Using Header Auth</span></div>
+          <pre><span class="kw">curl</span> -X POST <span class="st">"{BASE_URL}/api/send.php"</span> \
+  -H <span class="st">"X-Api-Key: sk_your_api_key"</span> \
+  -d <span class="st">"mobile=9876543210"</span> \
+  -d <span class="st">"message=Your OTP is 123456."</span> \
+  -d <span class="st">"sender_id=MYSEND"</span> \
+  -d <span class="st">"entity_id=YOUR_ENTITY_ID"</span> \
+  -d <span class="st">"template_id=1007XXXXXXXXX001"</span></pre>
+        </div>
+      </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="feature-section pt-20 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Platform Integration Guides</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+
+                        <h5>1. WordPress Plugin</h5>
+    <div class="code-block mb-4">
+      <div class="code-block-header"><span class="code-lang">PHP — WordPress (wp_remote_post)</span></div>
+      <pre><span class="kw">function</span> <span class="fn">my_send_sms</span>(<span class="va">$mobile</span>, <span class="va">$message</span>, <span class="va">$templateId</span>) {
+    <span class="va">$response</span> = <span class="fn">wp_remote_post</span>(<span class="st">'{BASE_URL}/api/send.php'</span>, [
+        <span class="st">'timeout'</span> => <span class="nu">30</span>,
+        <span class="st">'body'</span>    => [
+            <span class="st">'api_key'</span>     => <span class="fn">get_option</span>(<span class="st">'my_sms_api_key'</span>),
+            <span class="st">'mobile'</span>      => <span class="va">$mobile</span>,
+            <span class="st">'message'</span>     => <span class="va">$message</span>,
+            <span class="st">'sender_id'</span>   => <span class="fn">get_option</span>(<span class="st">'my_sms_sender_id'</span>),
+            <span class="st">'entity_id'</span>   => <span class="fn">get_option</span>(<span class="st">'my_sms_entity_id'</span>),
+            <span class="st">'template_id'</span> => <span class="va">$templateId</span>,
+            <span class="st">'sms_type'</span>    => <span class="st">'transactional'</span>,
+        ],
+    ]);
+    <span class="kw">return</span> <span class="fn">json_decode</span>(<span class="fn">wp_remote_retrieve_body</span>(<span class="va">$response</span>), <span class="kw">true</span>);
+}</pre>
+    </div>
+
+    <h5>2. Laravel (PHP Framework)</h5>
+    <div class="code-block mb-4">
+      <div class="code-block-header"><span class="code-lang">PHP — Laravel HTTP Client</span></div>
+      <pre><span class="kw">use</span> Illuminate\Support\Facades\Http;
+
+<span class="kw">class</span> <span class="fn">SmsService</span> {
+    <span class="kw">public function</span> <span class="fn">send</span>(string <span class="va">$mobile</span>, string <span class="va">$message</span>, string <span class="va">$templateId</span>): array {
+        <span class="va">$response</span> = Http::<span class="fn">timeout</span>(<span class="nu">30</span>)-><span class="fn">asForm</span>()-><span class="fn">post</span>(
+            <span class="fn">config</span>(<span class="st">'services.sms.base_url'</span>) . <span class="st">'/api/send.php'</span>,
+            [
+                <span class="st">'api_key'</span>     => <span class="fn">config</span>(<span class="st">'services.sms.api_key'</span>),
+                <span class="st">'mobile'</span>      => <span class="va">$mobile</span>,
+                <span class="st">'message'</span>     => <span class="va">$message</span>,
+                <span class="st">'sender_id'</span>   => <span class="fn">config</span>(<span class="st">'services.sms.sender_id'</span>),
+                <span class="st">'entity_id'</span>   => <span class="fn">config</span>(<span class="st">'services.sms.entity_id'</span>),
+                <span class="st">'template_id'</span> => <span class="va">$templateId</span>,
+                <span class="st">'sms_type'</span>    => <span class="st">'transactional'</span>,
+            ]
+        );
+        <span class="kw">return</span> <span class="va">$response</span>-><span class="fn">json</span>();
+    }
+}
+
+<span class="cm">// config/services.php</span>
+<span class="st">'sms'</span> => [
+    <span class="st">'base_url'</span>  => <span class="fn">env</span>(<span class="st">'SMS_BASE_URL'</span>),
+    <span class="st">'api_key'</span>   => <span class="fn">env</span>(<span class="st">'SMS_API_KEY'</span>),
+    <span class="st">'sender_id'</span> => <span class="fn">env</span>(<span class="st">'SMS_SENDER_ID'</span>),
+    <span class="st">'entity_id'</span> => <span class="fn">env</span>(<span class="st">'SMS_ENTITY_ID'</span>),
+]</pre>
+    </div>
+
+    <h5>3. Django (Python Framework)</h5>
+    <div class="code-block mb-4">
+      <div class="code-block-header"><span class="code-lang">Python — Django</span></div>
+      <pre><span class="cm"># sms_service.py</span>
+<span class="kw">import</span> requests
+<span class="kw">from</span> django.conf <span class="kw">import</span> settings
+
+<span class="kw">def</span> <span class="fn">send_sms</span>(mobile: str, message: str, template_id: str) -> dict:
+    <span class="kw">return</span> requests.<span class="fn">post</span>(
+        f<span class="st">"{settings.SMS_GATEWAY_URL}/api/send.php"</span>,
+        data={
+            <span class="st">"api_key"</span>:     settings.SMS_API_KEY,
+            <span class="st">"mobile"</span>:      mobile,
+            <span class="st">"message"</span>:     message,
+            <span class="st">"sender_id"</span>:   settings.SMS_SENDER_ID,
+            <span class="st">"entity_id"</span>:   settings.SMS_ENTITY_ID,
+            <span class="st">"template_id"</span>: template_id,
+            <span class="st">"sms_type"</span>:    <span class="st">"transactional"</span>,
+        },
+        timeout=<span class="nu">30</span>
+    ).<span class="fn">json</span>()
+
+<span class="cm"># settings.py</span>
+SMS_GATEWAY_URL = <span class="fn">env</span>(<span class="st">'SMS_GATEWAY_URL'</span>)
+SMS_API_KEY     = <span class="fn">env</span>(<span class="st">'SMS_API_KEY'</span>)
+SMS_SENDER_ID   = <span class="fn">env</span>(<span class="st">'SMS_SENDER_ID'</span>)
+SMS_ENTITY_ID   = <span class="fn">env</span>(<span class="st">'SMS_ENTITY_ID'</span>)</pre>
+    </div>
+
+    <h5>4. Express.js (Node.js Framework)</h5>
+    <div class="code-block">
+      <div class="code-block-header"><span class="code-lang">JavaScript — Express.js</span></div>
+      <pre><span class="kw">const</span> express = <span class="fn">require</span>(<span class="st">'express'</span>);
+<span class="kw">const</span> axios   = <span class="fn">require</span>(<span class="st">'axios'</span>);
+<span class="kw">const</span> qs      = <span class="fn">require</span>(<span class="st">'querystring'</span>);
+<span class="kw">const</span> app     = <span class="fn">express</span>();
+app.<span class="fn">use</span>(express.<span class="fn">json</span>());
+
+<span class="cm">// SMS Service</span>
+<span class="kw">const</span> smsService = {
+    <span class="fn">send</span>: <span class="kw">async</span> (mobile, message, templateId) => {
+        <span class="kw">const</span> { data } = <span class="kw">await</span> axios.<span class="fn">post</span>(
+            <span class="st">`${process.env.SMS_GATEWAY_URL}/api/send.php`</span>,
+            <span class="fn">qs.stringify</span>({
+                api_key:     process.env.SMS_API_KEY,
+                mobile, message,
+                sender_id:   process.env.SMS_SENDER_ID,
+                entity_id:   process.env.SMS_ENTITY_ID,
+                template_id: templateId,
+                sms_type:    <span class="st">'transactional'</span>,
+            })
+        );
+        <span class="kw">return</span> data;
+    }
+};
+
+<span class="cm">// API Route — Send OTP</span>
+app.<span class="fn">post</span>(<span class="st">'/send-otp'</span>, <span class="kw">async</span> (req, res) => {
+    <span class="kw">const</span> { mobile } = req.body;
+    <span class="kw">const</span> otp        = Math.<span class="fn">floor</span>(<span class="nu">100000</span> + Math.<span class="fn">random</span>() * <span class="nu">900000</span>);
+    <span class="kw">const</span> result     = <span class="kw">await</span> smsService.<span class="fn">send</span>(
+        mobile,
+        <span class="st">`Your OTP is ${otp}. Valid for 5 minutes.`</span>,
+        process.env.OTP_TEMPLATE_ID
+    );
+    res.<span class="fn">json</span>({ success: result.success, message: result.message });
+});</pre>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="feature-section pt-40 ">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>Best Practices</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+                        <div class="features-box p-4  mb-4" style="background:#f9fafb">
+                            <div class="features-box-content">
+                                <h5>Security</h5>
+                                <ul class="check-list-wrap">
+                                  <li style="font-size:14px">Never hardcode your API Key in source code. Use environment variables or a config file outside the web root.</li>
+                                  <li style="font-size:14px">Always make API calls from your server — never from browser-side JavaScript.</li>
+                                  <li style="font-size:14px">Rotate your API Key periodically from the dashboard.</li>
+                                  <li style="font-size:14px">Log all SMS API calls (mobile, template, status) for audit purposes.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="features-box p-4  mb-4" style="background:#f9fafb">
+                            <div class="features-box-content">
+
+                                <h5>Performance</h5>
+                                <ul class="check-list-wrap">
+                                  <li style="font-size:14px">For bulk sends (e.g., 1000+ users), add a 100–200ms delay between requests to stay within rate limits.</li>
+                                  <li style="font-size:14px">Check balance before sending large batches. Use the balance API proactively.</li>
+                                  <li style="font-size:14px">Implement async queuing (e.g., Redis queue, Laravel Queues) for high-volume notifications.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="features-box p-4 mb-4" style="background:#f9fafb">
+                            <div class="features-box-content">
+
+                                <h5>Reliability</h5>
+                                <ul class="check-list-wrap">
+                                  <li style="font-size:14px">Always check <code>success: true</code> in the JSON response before assuming delivery.</li>
+                                  <li style="font-size:14px">Log failed SMS attempts and implement retry logic for transient errors.</li>
+                                  <li style="font-size:14px">Set a reasonable timeout (30 seconds) on all API calls.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section class="feature-section pt-40 pb-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <div class="section-heading mb-2">
+                            <h4>DLT Compliance (India)</h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12" >
+
+                        <div class="features-box p-4 mb-4" style="background:#fffbeb; border-color: #fde68a;">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">📜</span>
+                                  <div class="info-card-body">
+                                    <strong>TRAI Mandate:</strong> All commercial SMS sent in India must comply with the DLT (Distributed Ledger Technology) framework as mandated by TRAI. Non-compliant messages will be blocked by telecom operators.
+                                  </div>
+                            </div>
+                        </div>
+                        <h5>DLT Registration Checklist</h5>
+                        <div class="table-wrap mb-4">
+                          <table>
+                            <thead><tr><th>Item</th><th>Description</th><th>Where to Get</th></tr></thead>
+                            <tbody>
+                              <tr>
+                                <td><strong>Entity ID</strong></td>
+                                <td>Unique ID assigned to your business on DLT</td>
+                                <td>DLT portal (Jio, Airtel, Vi, BSNL)</td>
+                              </tr>
+                              <tr>
+                                <td><strong>Sender ID</strong></td>
+                                <td>6-character ID shown as sender name</td>
+                                <td>Register on DLT portal under Headers</td>
+                              </tr>
+                              <tr>
+                                <td><strong>Template ID</strong></td>
+                                <td>Unique ID for each approved message template</td>
+                                <td>Register each template on DLT portal</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <div class="features-box p-4 " style="background:#fef2f2; border-color: #fecaca;">
+                            <div class="features-box-content info-card">
+                                <span class="info-card-icon">❌</span>
+      <div class="info-card-body">
+        <strong>Common Mistake:</strong> Do not send a message that differs from the DLT-approved template content. Telecom operators will block mismatched messages.
+      </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+    </div>
+
+    <!--footer section start-->
+    <footer class="footer-1 ptb-60 gradient-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4 mb-4 mb-md-4 mb-sm-4 mb-lg-0">
+                    <a href="#" class="d-block">
+                        <img src="assets/img/logo-white.png" alt="logo" class="img-fluid" />
+                    </a>
+                    <br />
+                    <p>
+                        SnWebTech Solution provides fast, secure, and affordable SMS gateway services for businesses across India.
+                    </p>
+                    <ul class="list-inline social-list-default background-color social-hover-2 mt-2">
+                        <li class="list-inline-item">
+                            <a class="twitter" href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="youtube" href="#"><i class="fab fa-youtube"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="linkedin" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="dribbble" href="#"><i class="fab fa-dribbble"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-8">
+                    <div class="row mt-0">
+                        <div class="col-sm-6 col-md-2 col-lg-2 mb-4 mb-sm-4 mb-md-0 mb-lg-0">
+                            <h6 class="font-weight-normal">Quick Links</h6>
+                            <ul>
+                                <li>
+                                    <a href="#">About Us</a>
+                                </li>
+                                <li>
+                                    <a target="_blank" href="api-documentation.html">Documentation</a>
+                                </li>
+                                <li>
+                                    <a href="sms-addons.html">SMS Addons</a>
+                                </li>
+                                <li>
+                                    <a href="#">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-lg-3 mb-4 mb-sm-4 mb-md-0 mb-lg-0">
+                            <h6 class="font-weight-normal">Services</h6>
+                            <ul>
+                                <li>
+                                    <a href="#">Promotional SMS</a>
+                                </li>
+                                <li>
+                                    <a href="#">Transactional SMS</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 col-lg-3 mb-4 mb-sm-4 mb-md-0 mb-lg-0">
+                            <h6 class="font-weight-normal">Pricing</h6>
+                            <ul>
+                                <li>
+                                    <a href="promotional-sms-pricing.html">Promotional SMS</a>
+                                </li>
+                                <li>
+                                    <a href="transactional-sms-pricing.html">Transactional SMS</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-4 col-lg-4">
+                            <h6 class="font-weight-normal">Contact Info</h6>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fa fa-phone" style="padding-right: 10px;"></i>+91 80133 32877</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-envelope" style="padding-right: 10px;"></i>snwebtechsolution@gmail.com</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-map" style="padding-right: 10px;"></i>Bagula, India, West Bengal</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end of container-->
+    </footer>
+
+    <!--footer bottom copyright start-->
+    <div class="footer-bottom py-2" style="background:#091027">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright-wrap small-text">
+                        <p class="mb-0" style="color:#fff">
+                            <center style="color:#fff">&copy; 2026 SnWebTech SMS Gateway Pro. All Rights Reserved.</center>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--footer bottom copyright end-->
+    
+    <div class="scroll-top scroll-to-target primary-bg text-white" data-target="html">
+        <span class="fas fa-hand-point-up"></span>
+    </div>
+    <!--scroll bottom to top button end-->
+
+    <!--build:js-->
+    <script src="assets/js/vendors/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendors/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendors/bootstrap-slider.min.js"></script>
+    <script src="assets/js/vendors/swiper-bundle.min.js"></script>
+    <script src="assets/js/vendors/magnific-popup.min.js"></script>
+    <script src="assets/js/vendors/validator.min.js"></script>
+    <script src="assets/js/vendors/hs.megamenu.js"></script>
+    <script src="assets/js/app.js"></script>
+    <!--endbuild-->
+
+
+    <script>
+  // Tab switching
+  function showTab(event, tabId) {
+    const container = event.target.closest('.tabs');
+    container.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    container.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    container.querySelector('#' + tabId).classList.add('active');
+  }
+
+  // Copy button
+  function copyCode(btn) {
+    const pre = btn.closest('.code-block').querySelector('pre');
+    navigator.clipboard.writeText(pre.innerText).then(() => {
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 2000);
+    });
+  }
+
+  // Active sidebar link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const links = document.querySelectorAll('.sidebar-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    links.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+</script>
+
+</body>
+
+</html>
